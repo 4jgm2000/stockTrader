@@ -23,7 +23,7 @@ To estimate results each of the team members will use 10000 demo dollars to trad
 
 
 <p><img src="/images/money.jpg" style:"height:300px; width:300px"></p>
-![image](images/money.jpg)
+![image]("images/money.jpg")
 
 
 <b>References</b>
