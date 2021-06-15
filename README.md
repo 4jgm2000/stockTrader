@@ -21,7 +21,7 @@ With a Recurrent Neural Network, we could build a net with data from a fraction 
 
 To estimate results each of the team members will use 10000 demo dollars to trade (see graph below). The success scenario includes the model performing better than average among us by 500 dollars. Satisfactory scenario would be model performance within 200 dollars deviation from our average. Our comparison reference point has obvious self-interest, but might be inaccurate because of size sample and potential bias. In addition to that we will measure the performance of the model by number of winning vs losing trades and their respective average. 
 
-![Image](https://github.com/4jgm2000/stockTrader/blob/main/images/imageLikeEmbed.png)
+![Image](<p>https://github.com/4jgm2000/stockTrader/blob/main/images/imageLikeEmbed.png</p>)
 
 <p><img src="https://github.com/4jgm2000/stockTrader/blob/main/images/imageLikeEmbed.png" style:"height:300px; width:300px"></p>
 
