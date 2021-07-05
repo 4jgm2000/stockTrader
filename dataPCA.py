@@ -12,7 +12,7 @@ import time
 #for storing final dictionary
 import json
 from sklearn.decomposition import PCA
-
+from sklearn.preprocessing import normalize
 with open('reduced_stock_data.json') as json_file:
     stocks = json.load(json_file)
 
@@ -25,7 +25,7 @@ for (key,value) in stocks.items():
         del stockNoDate['Date']
         curStock = pd.DataFrame.from_dict(stockNoDate)
 
-        pca.fit(curStock)
+        pca.fit(normalize(curStock))
         num += 1
         var += pca.explained_variance_ratio_
     except:
@@ -37,8 +37,7 @@ print(var)
 # #
 #   ['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume'] with date taken out of the pca algorithm
 
-# # [9.99995279e-01 4.71666551e-06 2.85886929e-09 1.04067581e-09
-# #  1.14000655e-10]
+####[0.77848651 0.01483497 0.01039867 0.00993215 0.00992129]
 
 
 # Open works to collect all of the data necessary, and the other data adds uneccesary complexity to the algorithm quite drastically.
