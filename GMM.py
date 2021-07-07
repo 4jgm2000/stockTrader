@@ -42,8 +42,9 @@ for (key,value) in stocks.items():
     if (len(inputArray.loc[key].at['Open']) < longest):
         j=0
         while (j < (longest - len(inputArray.loc[key].at['Open']))):
-            
+            inputArray.at[0: longest - len(inputArray.loc[key].at['Open'])] = cur[0]
             j+=1
+        inputArray.at[longest - len(inputArray.loc[key].at['Open']) + 1: longest] = cur[1:indList[i]]
     i+=1 
 #print(indList[0], len(inputArray.loc['A'].at['Open']))
 #print(inputArray.loc['A'].at['Open'])
