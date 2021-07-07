@@ -8,15 +8,6 @@ We aim to investigate the Russel 1000 index over a period from ~2000 (depending 
 
 We aim to investigate the success in paper trading over the period of 2019-2020 in comparison to what would be expected by an everyday person(with the inclusion of some bias given we have an idea of the results). This is in effort to determine the best features that dictate whether to buy or sell in order to maximize profit, and whether it is possible to utilize this algorithm to match other forms of investing that come with less risk. 
 
-<h1><b>Methods</b></h1>
-
-To make the predictor, we will be using stock data sourced from <a href ='https://www.kaggle.com/jacksoncrow/stock-market-dataset'>Dataset</a>. We will extract features from daily stock data such as opening value, daily highs and daily lows from ~2000 to 2019 and create an algorithm that trains on the data. The algorithm will then predict whether the stock will rise or fall and pick the stocks that it believes will return the best value over time. This will vary from method to method on exactly what the algorithm is performing.
-
-Stock predictors have commonly used models made with logistic regression, neural networks, k-nearest neighbors and support-vector machines<sup>3</sup>. With logistic regression, we will model the stock data from a training set to an equation that could be used to predict whether the stock will rise or fall. Then we will compare this predictor to a set of testing data and compare with more successful models to adjust the equation to minimize loss.
-We will also try an SVM for the predictive model. It will be used in a similar capacity to separate the stocks into more desirable and less desirable groups to decide which stocks are best to choose. 
-With a Recurrent Neural Network, we could build a net with data from a fraction of the total time, for example 2012-2016, see how it predicts the next time period, 2017, and update the neurons to more accurately predict the outcome.
-
-
 <h2><b>Data Cleaning</b></h2>
 For the data cleaning, most of the effort involved came from finding the proper tools to quickly and efficiently save the data in an accessible format. After some research, we decided on storing the data in a python dictionary that we would store as a massive json file. We used libraries such as pandas, json, and csv to do so, settling on a format of a dictionary containing dictionaries for each stock under consideration that then contained the relevant data ['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']. This was then reduced to the stocks that are a part of the Russel 1000 index for the purpose of space and time efficiency. <br><br>
 
@@ -24,6 +15,14 @@ Additional Cleaning performed throughout included the fitting of the testing dat
 
 <h3>PCA</h3>
 To cut down on features, we ran the dataset of the stocks within the Russel 1000 index through PCA to determine redundancy within the data. It was found that on average for each stock, the opening price accounted for a vast majority of the variance and the dataset was reduced to the dates and opening prices accordingly.
+
+<h1><b>Methods</b></h1>
+
+To make the predictor, we will be using stock data sourced from <a href ='https://www.kaggle.com/jacksoncrow/stock-market-dataset'>Dataset</a>. We will extract features from daily stock data such as opening value, daily highs and daily lows from ~2000 to 2019 and create an algorithm that trains on the data. The algorithm will then predict whether the stock will rise or fall and pick the stocks that it believes will return the best value over time. This will vary from method to method on exactly what the algorithm is performing.
+
+Stock predictors have commonly used models made with logistic regression, neural networks, k-nearest neighbors and support-vector machines<sup>3</sup>. With logistic regression, we will model the stock data from a training set to an equation that could be used to predict whether the stock will rise or fall. Then we will compare this predictor to a set of testing data and compare with more successful models to adjust the equation to minimize loss.
+We will also try an SVM for the predictive model. It will be used in a similar capacity to separate the stocks into more desirable and less desirable groups to decide which stocks are best to choose. 
+With a Recurrent Neural Network, we could build a net with data from a fraction of the total time, for example 2012-2016, see how it predicts the next time period, 2017, and update the neurons to more accurately predict the outcome.
 
 <h2><b>Method 1: GMM</b></h2>
 
