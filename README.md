@@ -31,9 +31,9 @@ Our first method is Gaussian Mixture Modelling, in an attempt to cluster stocks 
 
 
 
-<h1><b>Potential results and Discussion</b></h1>
+<h1><b>Results and Discussion</b></h1>
 
-To estimate results each of the team members will use 10000 demo dollars to trade (see graph below). The success scenario includes the model performing better than average among us by 500 dollars. Satisfactory scenario would be model performance within 200 dollars deviation from our average. Our comparison reference point has obvious self-interest, but might be inaccurate because of size sample and potential bias. In addition to that we will measure the performance of the model by number of winning vs losing trades and their respective average. 
+We used the testing method described in our proposal, each person starts with $10000 to pick a set of stocks starting in January 2019 and checking the value in January 2020. In general we chose from a set of stocks from the Russel 1000 index, which contains a variety of well known small-cap stocks. Since the GMM model was trained and tested from parts of this data, we also included the value of the Index for the same period. 
 
 ![](/images/money.jpg)
 
