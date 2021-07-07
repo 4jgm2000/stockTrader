@@ -34,7 +34,7 @@ Our first method is Gaussian Mixture Modelling, in an attempt to cluster stocks 
 
 We used the testing method described in our proposal, each person starts with $10000 to pick a set of stocks starting in January 2019 and checking the value in January 2020. In general we chose from a set of stocks from the Russel 1000 index, which contains a variety of well known small-cap stocks. Since the GMM model was trained and tested from parts of this data, we also included the value of the Index for the same period. 
 
-![](images/Stock Test.jpg)
+![](/images/Stock Test.jpg)
 
 Because 2019 was a great year for the economy, everyone gained from their choice of stocks and even if the stock picker chose randomly, it would have likely gained value. 
 
