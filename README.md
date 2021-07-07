@@ -18,6 +18,7 @@ With a Recurrent Neural Network, we could build a net with data from a fraction 
 
 
 <h2><b>Data Cleaning</b></h2>
+For the data cleaning, most of the effort involved came from finding the proper tools to quickly and efficiently save the data in an accessible format. After some research, we decided on storing the data in a python dictionary that we would store as a massive json file. We used libraries such as pandas, json, and csv to do so, settling on a format of a dictionary containing dictionaries for each stock under consideration that then contained the relevant data (Date, open price, close price, etc.). This was then reduced to the stocks that are a part of the Russel 1000 index for the purpose of space and time efficiency. 
 
 <h3>PCA</h3>
 To cut down on features, we ran the dataset of the stocks within the Russel 1000 index through PCA to determine redundancy within the data. It was found that on average for each stock, the opening price accounted for a vast majority of the variance and the dataset was reduced to the dates and opening prices accordingly.
