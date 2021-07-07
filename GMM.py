@@ -9,7 +9,7 @@ with open('reduced_dimension_stock_data.json') as json_file:
     stocks = json.load(json_file)
 
 indList = []
-print(len(stocks))
+#print(len(stocks))
 for (key,value) in stocks.items():
     try:
         # print(value['Date'])
@@ -20,17 +20,31 @@ for (key,value) in stocks.items():
     except Exception:
         indList.append(0)
         del value['Date']
-print(indList[0:100])
+#print(indList[0:100])
 
 
 
 inputArray = pd.DataFrame.from_dict(stocks, orient='index')
+#find longest sub-array
+longest = 0
+for (key, value) in stocks.items():
+    if (len(inputArray.loc[key].at['Open']) > longest):
+        longest = len(inputArray.loc[key].at['Open'])
+#print("longest:")
+#print(longest)
+#in this dataset, longest is 14665
+
 i=0
 for (key,value) in stocks.items():
     cur = inputArray.loc[key].at['Open']
     inputArray.at[key,'Open'] = cur[0:indList[i]]
+    #duplicate first element to make array lengths match
+    if (len(inputArray.loc[key].at['Open']) < longest):
+        j=0
+        while (j < (longest - len(inputArray.loc[key].at['Open']))):
+            
+            j+=1
     i+=1 
-print(indList[0], len(inputArray.loc['A'].at['Open']))
-print(inputArray.loc['A'].at['Open'])
-# gm = GaussianMixture(n_components=3, random_state=0).fit_predict(inputArray)
-
+#print(indList[0], len(inputArray.loc['A'].at['Open']))
+#print(inputArray.loc['A'].at['Open'])
+gm = GaussianMixture(n_components=3, random_state=0).fit_predict(inputArray)
