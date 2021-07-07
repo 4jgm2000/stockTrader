@@ -97,13 +97,9 @@ twoList = []
 for i in range(694):
     if gm[i] == 2:
         twoList.append(i)
-        elif gm[i] == 1
+    elif gm[i] == 1:
         print('1', tick[i])
-print(tick[twoList])
+
 print(twoList)
-print(random.choice(twoList))
-print(random.choice(twoList))
-print(random.choice(twoList))
-print(random.choice(twoList))
-print(random.choice(twoList))
+
 
