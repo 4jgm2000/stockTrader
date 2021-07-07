@@ -66,7 +66,7 @@ for (key,value) in stocks.items():
 print(len(inputArray))
 arr = pd.DataFrame.to_numpy(inputArray)
 print(numpy.shape(arr))
-print(arr[0])
+print(arr[0]) 
 # print((len(inputArray.loc[inputArray['Open']]) == longest).all())
 #print(indList[0], len(inputArray.loc['A'].at['Open']))
 # print(inputArray[0:10])
