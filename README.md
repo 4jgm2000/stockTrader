@@ -38,6 +38,7 @@ We used the testing method described in our proposal, each person starts with $1
 
 Because 2019 was a great year for the economy, everyone gained from their choice of stocks and even if the stock picker chose randomly, it would have likely gained value. 
 
+<h2>GMM</h2>
 The GMM average final total was $15,258 beating all but one group member. This was roughly a 18% increase over the index fund growth over the period from 2019-2020. Key stocks chosen by the algorithm include GOOG, NVDA, C, as well as others. Further data cleaning should be done to ensure that these results are as robust as possible as during implementation certain stock datasets were deemed to be unvaible and skewing the potential groupings. If these were to all be cleaned up rather than looked over it could provide better results that could potentially yield even more money. This method, although simplistic, shows that it is possible to model the market and achieve growth that would rival that of a passive index fund. Future methods should work to increase the potential for stock growth as well as adding new capabilities such as buying and selling throughout the period to gather more money. 
 
 <b>References</b>
