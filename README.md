@@ -37,6 +37,7 @@ We used the testing method described in our proposal, each person starts with $1
 
 ![](/images/money.jpg)
 
+Because 2019 was a great year for the economy, everyone gained from their choice of stocks and even if the stock picker chose randomly, it would have likely gained value. 
 
 <b>References</b>
 <ol>
