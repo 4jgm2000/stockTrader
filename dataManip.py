@@ -16,7 +16,7 @@ with open('reduced_dimension_stock_data.json') as json_file:
     stocks = json.load(json_file)
 
 indList = []
-#print(len(stocks))
+#print(len(stocks)) 
 for (key,value) in stocks.items():
     try:
         # print(value['Date'])
