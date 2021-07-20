@@ -2,7 +2,7 @@
 
 The stock market is an area where people can go to invest their money for small amounts of a business in the form of shares. Many have attempted to predict the movement of the market, however many machine learning studies have failed to accurately capture the full nature of the market<sup>1</sup>. This can be a result of high volatility, commonly seen today in shares such as TSLA or GME, but also due to other algorithmic factors such as poor training data size as well as imperfect feature selection<sup>2</sup>. 
 
-We aim to investigate the Russel 1000 index over a period from ~2000 (depending on the stock)-2019 to investigate performance in paper trading by traditional machine learning algorithms. This will then be compared to personal performance, among the group, in paper trading utilizing what we known individually about the market in an attempt to maximize profits. This will give a simple approach to the success of the algorithm while utilizing a vast amount of data to attempt to reach the most logical conclusions on what stocks to buy or sell based on their features. We will provide other methods of testing such as the analysis of passive index fund growth over our chosen testing period. This will give insight into the model's viability to outpreform safer and less volatile methods of stock trading.
+We aim to investigate the Russel 1000 index over a period from ~2000 (depending on the stock)-2019 to investigate performance in paper trading by traditional machine learning algorithms. This will then be compared to personal performance, among the group, in paper trading utilizing what we know individually about the market in an attempt to maximize profits. This will give a simple approach to the success of the algorithm while utilizing a vast amount of data to attempt to reach the most logical conclusions on what stocks to buy or sell based on their features. We will provide other methods of testing such as the analysis of passive index fund growth over our chosen testing period. This will give insight into the model's viability to outperform safer and less volatile methods of stock trading.
 
 <h2><b>Problem definition:</b></h2>
 
@@ -18,7 +18,7 @@ To cut down on features, we ran the dataset of the stocks within the Russel 1000
 
 <h1><b>Methods</b></h1>
 
-To make the predictor, we will be using stock data sourced from <a href ='https://www.kaggle.com/jacksoncrow/stock-market-dataset'>Dataset</a>. We will extract features from daily stock data such as opening value, daily highs and daily lows from ~2000 to 2019 and create an algorithm that trains on the data. The algorithm will then predict whether the stock will rise or fall and pick the stocks that it believes will return the best value over time. This will vary from method to method on exactly what the algorithm is performing.
+To make the predictor, we will be using stock data sourced from this <a href ='https://www.kaggle.com/jacksoncrow/stock-market-dataset'>Dataset</a> found on kaggle.com. We will extract features from daily stock data such as opening value, daily highs and daily lows from ~2000 to 2019 and create an algorithm that trains on the data. The algorithm will then predict whether the stock will rise or fall and pick the stocks that it believes will return the best value over time. This will vary from method to method on exactly what the algorithm is performing.
 
 Stock predictors have commonly used models made with logistic regression, neural networks, k-nearest neighbors and support-vector machines<sup>3</sup>. With logistic regression, we will model the stock data from a training set to an equation that could be used to predict whether the stock will rise or fall. Then we will compare this predictor to a set of testing data and compare with more successful models to adjust the equation to minimize loss.
 We will also try an SVM for the predictive model. It will be used in a similar capacity to separate the stocks into more desirable and less desirable groups to decide which stocks are best to choose. 
@@ -26,7 +26,7 @@ With a Recurrent Neural Network, we could build a net with data from a fraction 
 
 <h2><b>Method 1: GMM</b></h2>
 
-Our first method is Gaussian Mixture Modelling, in an attempt to cluster stocks by those that are good to buy and those that are good to sell. This is a less robust method, as it will only group these stocks which will result in holding the stock throughout the entire period. We first had to get the data into a usable format for the sklearn GMM method, and then created 3 groups by which to classify these stocks into. Those three groups would give us those that would be best to sell, buy, or hold. Although for testing purposed we will be holding all stocks throughout the period. We will select randomly from the group that we expect to be buy after visualization, and deterrmine the amount of money that will be made from these stocks. This will be repeated and averaged to get a more accurate result of the classifier. 
+Our first method is Gaussian Mixture Modelling, in an attempt to cluster stocks by those that are good to buy and those that are good to sell. This is a less robust method, as it will only group these stocks which will result in holding the stock throughout the entire period. We first had to get the data into a usable format for the sklearn GMM method, and then created 3 groups by which to classify these stocks into. Those three groups would give us those that would be best to sell, buy, or hold. Although for testing purposes we will be holding all stocks throughout the period. We will select randomly from the group that we expect to be the "buy" classification after visualization, and determine the amount of money that will be made from these stocks. This will be repeated and averaged to get a more accurate result of the classifier. 
 
 
 
@@ -36,9 +36,12 @@ We used the testing method described in our proposal, each person starts with $1
 
 ![](/images/Stock Test.jpg)
 
-Because 2019 was a great year for the economy, everyone gained from their choice of stocks and even if the stock picker chose randomly, it would have likely gained value. 
+Because 2019 was a great year for the economy, everyone gained from their choice of stocks, and even if the stock picker chose randomly, it would have likely gained value regardless. However, the results from the first test were very promising. 
 
-<b>References</b>
+<h2>GMM</h2>
+The GMM average final total was $15,258 beating all but one group member. This was roughly a 18% increase over the index fund growth during the period from 2019-2020. Key stocks chosen by the algorithm include GOOG, NVDA, C, as well as others. Further data cleaning should be done to ensure that these results are as robust as possible, as during implementation certain stock datasets were deemed to be unviable due to skewing the groupings. If these were to all be cleaned up rather than looked over it could provide better results that could potentially yield even more money. This method, although simplistic, shows that it is possible to model the market and achieve growth that would rival that of a passive index fund. Future methods should work to increase the potential for stock growth as well as adding new capabilities such as buying and selling throughout the period to gather more money. 
+
+<h1><b>References</b></h1>
 <ol>
 <li>https://www.google.com/url?q=https://www.hindawi.com/journals/mpe/2019/7816154/&sa=D&source=editors&ust=1623514864119000&usg=AOvVaw03PLyzhGS252HqnVZ1q3E</li>
 <li>https://www.google.com/url?q=https://www.cis.upenn.edu/~mkearns/papers/KearnsNevmyvakaHFTRiskBooks.pdf&sa=D&source=editors&ust=1623515033628000&usg=AOvVaw3v4hX0a3VFQNYGUOP8y_Fl</li>
@@ -46,5 +49,6 @@ Because 2019 was a great year for the economy, everyone gained from their choice
 <li>Polygon.io - Stock Market Data APIs</li>
   <li>https://core.ac.uk/download/pdf/39667613.pdf</li>
   <li>https://www.ifk-cfs.de/fileadmin/downloads/publications/wp/09_10.pd</li>
+  <li>https://www.kaggle.com/jacksoncrow/stock-market-dataset</li>
   </ol>
 
