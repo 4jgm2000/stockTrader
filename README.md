@@ -28,7 +28,9 @@ With a Recurrent Neural Network, we could build a net with data from a fraction 
 
 Our first method is Gaussian Mixture Modelling, in an attempt to cluster stocks by those that are good to buy and those that are good to sell. This is a less robust method, as it will only group these stocks which will result in holding the stock throughout the entire period. We first had to get the data into a usable format for the sklearn GMM method, and then created 3 groups by which to classify these stocks into. Those three groups would give us those that would be best to sell, buy, or hold. Although for testing purposes we will be holding all stocks throughout the period. We will select randomly from the group that we expect to be the "buy" classification after visualization, and determine the amount of money that will be made from these stocks. This will be repeated and averaged to get a more accurate result of the classifier. 
 
+<h2><b>Method 2: Polynomial Regression</b></h2>
 
+We decided to use regression for our second method. Since we had reduced our feature set to just the opening values, it seemed like polynomial regression would be most appropriate. Because of the data issues we experienced for GMM, particularly the variable date ranges, we decided the best use of Regression would be to model each stock individually from its first value up to the start of 2019. The resulting model would then be used to estimate the value of the stock after 1 year. The stocks with the best estimated gain would be chosen as “buy” stocks.
 
 <h1><b>Results and Discussion</b></h1>
 
