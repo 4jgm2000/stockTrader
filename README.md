@@ -50,7 +50,7 @@ The Regression performed surprisingly well, picking 10 stocks that valued at $17
 
 
 <h2>Conclusion</h2>
-![](images/Final Money, algorithms.png)
+![](images/finalAlgo.png)
 
 <h1><b>References</b></h1>
 <ol>
