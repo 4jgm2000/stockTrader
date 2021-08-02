@@ -34,6 +34,7 @@ We decided to use regression for our second method. Since we had reduced our fea
 
 <h2><b>Method 3: Neural Network</b></h2>
 
+Our final method is that the creation of a Neural Network to select which stocks would be profitable and should be bought. The first issue we ran into is that most of the Neural Networks that we researched involved supervised learning- in other words, the problem would be reduced to a simpler classification problem. Consequently, we researched Self-Organizing Maps, which are essentially Neural Networks that label data independent of human intervention and parameters. However, we were unable to find an adequate implementation that would function with our dataset and keras, and implementing our own was beyond our abilities. Thus, we stuck to having the Neural Network classify stocks based on whether they were profitable, which we based on those stocks being in the top 10% of stocks.
 
 <h1><b>Results and Discussion</b></h1>
 
@@ -51,6 +52,7 @@ The Regression performed surprisingly well, picking 10 stocks that valued at $17
 
 <h2>Neural Network</h2>
 
+The Neural Network performed well, firmly beating out the index, GMM, and humans with a selection of 57 stocks that were valued at $17,154, which is approximately 33% better than the index fund. Those results were strong & promising, but could have most likely been improved on in several ways. Firstly, as mentioned in the above Method discussion, Self-Organizing maps could have been used to remove human interpretation of the data and change the problem from supervised learning to unsupervised learning. Secondly, a more rigorous classification method of which stocks were "pickable" and which were not, as well as which stocks were "superstars" (i.e. more money should have been invested in them) could have been implemented. Thirdly, the architecture (and specifically the input dimensions of the Neural Network) could have been improved & changed to allow for inputting of time series data of varying length; manipulating the Neural Network to function with time series data was another significant issue of the implementation. Lastly, the hyperparameters of the Neural Network including but not limited to the number of layers and size of each layer could have been implemented.
 
 <h2>Conclusion</h2>
 ![](images/finalAlgo.png)
