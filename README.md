@@ -32,6 +32,9 @@ Our first method is Gaussian Mixture Modelling, in an attempt to cluster stocks 
 
 We decided to use regression for our second method. Since we had reduced our feature set to just the opening values, it seemed like polynomial regression would be most appropriate. Because of the data issues we experienced for GMM, particularly the variable date ranges, we decided the best use of Regression would be to model each stock individually from its first value up to the start of 2019. The resulting model would then be used to estimate the value of the stock after 1 year. The stocks with the best estimated gain would be chosen as “buy” stocks.
 
+<h2><b>Method 3: Neural Network</b></h2>
+
+
 <h1><b>Results and Discussion</b></h1>
 
 We used the testing method described in our proposal, each person starts with $10000 to pick a set of stocks starting in January 2019 and checking the value in January 2020. In general we chose from a set of stocks from the Russel 1000 index, which contains a variety of well known small-cap stocks. Since the GMM model was trained and tested from parts of this data, we also included the value of the Index for the same period. 
@@ -46,7 +49,7 @@ The GMM average final total was $15,258 beating all but one group member. This w
 <h2>Polynomial Regression</h2>
 The Regression performed surprisingly well, picking 10 stocks that valued at $17,543 after a year which is 35% better than the index fund. This was mainly due to 2 stocks, IOVA and CVNA, that tripled in value that year. Most of the others gained 10% - 50%, which was typical for 2019. Despite the positive results, the regression over estimated the value gained by all of these. It estimated that the 10th best would triple in value while the best would increase 81 fold. Metrics for the regression were two RSMEs. The first measured the actual and predicted numerical stocks prices, giving a value of 67.066. The other which measured the relative gain from 2019 to 2020 meaning that if the stock was estimated to gain 50% over the year, y_predicted would be 1.5 and if it actually gained 20%, y_actual would be 1.2. This value was 2.814. This was modelled using 2nd degree polynomials only and the overestimations were exacerbated when higher degrees were used. This shows clearly why Regression is preferred for use or interpolation often cautioned against use for extrapolation. It’s difficult to say if this method should be trusted even with the results of this one data set.
 
-<h2>Nueral Network</h2>
+<h2>Neural Network</h2>
 
 
 <h2>Conclusion</h2>
