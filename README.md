@@ -36,7 +36,7 @@ We decided to use regression for our second method. Since we had reduced our fea
 
 We used the testing method described in our proposal, each person starts with $10000 to pick a set of stocks starting in January 2019 and checking the value in January 2020. In general we chose from a set of stocks from the Russel 1000 index, which contains a variety of well known small-cap stocks. Since the GMM model was trained and tested from parts of this data, we also included the value of the Index for the same period. 
 
-![](/images/Stock Test.jpg)
+![](/images/personalImg.png)
 
 Because 2019 was a great year for the economy, everyone gained from their choice of stocks, and even if the stock picker chose randomly, it would have likely gained value regardless. However, the results from the first test were very promising. 
 
@@ -46,6 +46,11 @@ The GMM average final total was $15,258 beating all but one group member. This w
 <h2>Polynomial Regression</h2>
 The Regression performed surprisingly well, picking 10 stocks that valued at $17,543 after a year which is 35% better than the index fund. This was mainly due to 2 stocks, IOVA and CVNA, that tripled in value that year. Most of the others gained 10% - 50%, which was typical for 2019. Despite the positive results, the regression over estimated the value gained by all of these. It estimated that the 10th best would triple in value while the best would increase 81 fold. Metrics for the regression were two RSMEs. The first measured the actual and predicted numerical stocks prices, giving a value of 67.066. The other which measured the relative gain from 2019 to 2020 meaning that if the stock was estimated to gain 50% over the year, y_predicted would be 1.5 and if it actually gained 20%, y_actual would be 1.2. This value was 2.814. This was modelled using 2nd degree polynomials only and the overestimations were exacerbated when higher degrees were used. This shows clearly why Regression is preferred for use or interpolation often cautioned against use for extrapolation. It’s difficult to say if this method should be trusted even with the results of this one data set.
 
+<h2>Nueral Network</h2>
+
+
+<h2>Conclusion</h2>
+![](images/Final Money, algorithms.png)
 
 <h1><b>References</b></h1>
 <ol>
